@@ -12,3 +12,8 @@ class Student(Base):
    Picture_Link = Column(String)
    Description = Column(String)
 
+class Cart(Base):
+   __tablename__ = "Cart"
+   id = Column(Integer, primary_key=True)
+   productID = Column(String)
+
