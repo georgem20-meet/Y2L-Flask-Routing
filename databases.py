@@ -1,4 +1,4 @@
-from model import Base, Product
+from model import Base, Product, Cart
 
 
 from sqlalchemy import create_engine
@@ -36,12 +36,12 @@ def delete_product(Name):
 
 def query_all():
    Product_object = session.query(
-      Product_object).all()
+      Product).all()
    return Product_object
 
 def query_by_name(Name):
    Product_object = session.query(
-       Product_object).filter_by(
+       Product).filter_by(
        Name = Name).first()
    return Product_object
 
@@ -49,4 +49,4 @@ def Add_To_Cart(productID):
 	Add_To_Cart = Cart(
 		productID = productID)
 	session.add(Add_To_Cart)
-	session.commit
+	session.commit()
